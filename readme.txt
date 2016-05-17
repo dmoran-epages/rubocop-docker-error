@@ -1,4 +1,6 @@
-# CLean build docker images and container, then run
+> cd prj
+
+# Clean build docker images and container, then run
 > docker stop $(docker ps -a -q);  docker rm -v $(docker ps -a -q); docker rmi $(docker images -q); docker build -t mydocker -f dockerfile .; docker run --name  mydocker  -v $PWD/rails:/app-code -it mydocker /bin/bash 
 
 
